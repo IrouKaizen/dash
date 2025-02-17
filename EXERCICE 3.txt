@@ -1,0 +1,33 @@
+
+
+			EXERCICE 3
+
+
+(a) Les articles dont le prix de vente est inférieur à 10 euros :
+
+//article[number(prix_vente) < 10]
+
+
+(b) Les éléments "nom" des articles fournis par l'établissement "meubles morel" :
+
+//article[fournisseur = 'meubles morel']/nom
+
+
+(c) Les éléments "fournisseur" des produits dont le nombre restant en stock est inférieur à ce qui a été vendu le mois dernier :
+
+//article[qtity < nb_ventes]/fournisseur
+
+
+(d) Les éléments "nom" des articles pour lesquels la marge est inférieure à 20% :
+
+//article[((prix_vente - prix_achat) / prix_vente) < 0.2]/nom
+
+
+(e) Deux requêtes permettant respectivement de calculer le chiffre d'affaires du mois dernier (somme de toutes les ventes) et le bénéfice du mois dernier :
+
+- Chiffre d'affaires du mois dernier :
+sum(//article/prix_vente * //article/nb_ventes)
+
+- Bénéfice du mois dernier :
+sum((//article/prix_vente - //article/prix_achat) * //article/nb_ventes)
+
